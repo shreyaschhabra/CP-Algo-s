@@ -1,0 +1,42 @@
+// CODE WRITTEN BY ME 
+
+
+int binary_search(int arr[],int low, int high, int x){
+    int mid;
+    while(low!=high){
+        mid = (low + high)/2;
+        if(arr[mid]<x){
+            low=mid+1;
+        }
+        else if(arr[mid]>x){
+            high = mid-1;
+        }
+        else if(arr[mid]==x){
+            return mid;
+        }
+    }
+    if(arr[low]==x){
+        return low;
+    }
+    else return -1;
+}
+
+
+// RECURSIVE CODE ON NET
+
+
+int binarySearch(int arr[], int low, int high, int x)
+{
+    if (high >= low) {
+        int mid = low + (high - low) / 2;
+
+        if (arr[mid] == x)
+            return mid;
+
+        if (arr[mid] > x)
+            return binarySearch(arr, low, mid - 1, x);
+
+        return binarySearch(arr, mid + 1, high, x);
+    }
+  return -1;
+}
