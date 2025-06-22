@@ -1,0 +1,13 @@
+1. UPPER BOUND AND LOWER BOUND 
+UB - upper_bound(v.begin(),v.end(),value) - returns iterator to the first element equal or less than the given value
+LB - lower_bound(v.begin(),v.end(),value) - returns iterator to the next greater element greater than the given value 
+It works for sorted array 
+
+2. BINARY SEARCH
+binary_search(arr.begin(), arr.end(), value) - returns index
+
+3. SORTING
+sort(v.begin(), v.end()); - sorts the array 
+sort(arr, arr + n); - does the same
+
+
