@@ -1,0 +1,126 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// In each iteration largest element goes towards the end, adjacent elements are compared n times and swapped accordingly.
+void bubble_sort(vector <int> &v){ 
+    int n=v.size();
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n-i-1; j++){
+            if(v[j]>v[j+1]){swap(v[j],v[j+1]);}
+        }
+    }
+}
+
+
+// In each k iteration first k elements get sorted, it sorts as it goes forward.at every element it finds suitable position in previously sorted array and puts it there.
+void insertion_sort(vector <int> &v){
+    int n=v.size();
+    for(int i=1; i<n; i++){
+        int temp = v[i];
+        int j;
+        for(j=i-1;v[j]>temp; j--){
+            v[j+1]=v[j];
+        }
+        v[j+1]=temp;
+    }
+}
+
+
+// In each iteration, get minimum element from the array left and swap it in front accordingly. 
+void selection_sort(vector <int> &v){
+    int n=v.size();
+    for(int i=0; i<n; i++){
+      int min=v[i];
+       int j,idx=i;
+       for(j=i+1; j<n; j++){
+          if(v[j]<min){
+              min=v[j];
+              idx=j;
+          }
+       }
+       swap(v[i],v[idx]);
+    }
+}
+
+
+// This merges two sorted arrays by creating copies copying in them and then element by element comparing and editing in a new array
+void merge(vector <int> &v, int l,int r, int mid){
+    int l_sz = mid - l + 1;
+    int L[l_sz + 1];
+    int r_sz = r - mid;
+    int R[r_sz + 1];
+    for(int i=0; i<l_sz; i++){
+        L[i] = v[i+l];
+    }
+    for(int i=0; i<r_sz; i++){
+        R[i] = v[i+mid+1];
+    }
+    L[l_sz]=INT_MAX;
+    R[r_sz]=INT_MAX;
+    int l_i=0;
+    int r_i=0;
+    for(int i=l; i<r+1; i++){
+        if(L[l_i]<=R[r_i]){
+            v[i]=L[l_i]; l_i++;
+        }
+        else {
+            v[i] = R[r_i]; r_i++;
+        }
+    }
+}
+
+// uses merge function to sort and divides into 2 equal ones
+void merge_sort(vector<int> &v, int left, int right){
+    if(left>=right) return;
+    int mid = (left + right)/2;
+    merge_sort(v,left,mid);
+    merge_sort(v,mid+1,right);
+    merge(v,left,right,mid);
+}
+
+
+// choose pivot and divide the array into two (<p and >p)
+int partition(vector <int> &v, int low, int high){
+    int pivot = v[high];
+    int i = low - 1;
+    for(int j=low; j<=high-1; j++){
+        if (v[j]<pivot){
+            i++;
+            swap(v[i],v[j]);
+        }
+    }
+    swap(v[i+1],v[high]);
+    return i+1;
+}
+
+// function for quick sort
+void quick_sort(vector<int> &v, int low,int high){
+    if(low<high){
+        int pi = partition(v,low,high);
+        
+        quick_sort(v,low,pi-1);
+        quick_sort(v,pi+1,high);
+    }
+}
+
+void print_vector(vector <int> &v){
+         // for(int i=0; i<v.size(); i++){
+        //     cout << v[i] << " ";
+       // }
+   for(int num : v){
+    cout << num << " ";
+ }
+    cout << endl;
+}
+
+int main(){
+    vector <int> v = {64, 34, 25, 12, 22, 11, 90};
+    int n = v.size();
+    print_vector(v);
+    quick_sort(v, 0, n - 1);
+    print_vector(v);
+    
+    return 0;
+}
+
