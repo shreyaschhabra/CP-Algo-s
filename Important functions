@@ -10,4 +10,12 @@ binary_search(arr.begin(), arr.end(), value) - returns index
 sort(v.begin(), v.end()); - sorts the array 
 sort(arr, arr + n); - does the same
 
+4. CONVERTING STRING TO INT 
+stoi(string) returns int value;
+
+5. CONVERTING INT TO STRING
+to_string(num) returns string;
+
+
+
 
