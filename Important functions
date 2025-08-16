@@ -16,6 +16,7 @@ stoi(string) returns int value;
 5. CONVERTING INT TO STRING
 to_string(num) returns string;
 
-
+6. NUMBER OF DIGITS IN NUM USING LOG
+int cnt = (int)(log10(n)+1);
 
 
