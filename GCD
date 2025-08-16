@@ -1,0 +1,25 @@
+In c++ we have inbuilt function for gcd.
+
+FUNCTION is
+int a,b;
+gcd_val = gcd(a,b);
+
+It is done using the euclidean algorithm
+
+EUCLIDEAN ALGO - gcd(a,b) = gcd(a-b,b) where a>b;
+for code can be written as gcd(a,b) = gcd(a%b,b) where a>b;
+
+int findGcd(int a, int b) {
+    while(a > 0 && b > 0) {
+        if(a > b) {
+            a = a % b;
+        }
+        else {
+            b = b % a; 
+        }
+    }
+    if(a == 0) {
+        return b;
+    }
+    return a;
+}
