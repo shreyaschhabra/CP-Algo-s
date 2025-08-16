@@ -1,0 +1,31 @@
+UNORDERED SET - stores unique elements in no sorted order
+SET - stores unique elements in sorted order
+
+
+unordered_set<data_type> variable_name; // set<data_type> s;
+s.insert(element) - to insert an element in the unordered set.
+s.begin() - return an iterator pointing to the first element in the unordered set.
+s.end() - returns an iterator to the theoretical element after the last element.
+s.count(value) - it returns 1 if the element is present in the container otherwise 0.
+s.clear() - deletes all the elements in unordered set.
+s.find(element) - returns iterator if finds otherwise returns s.end().
+s.erase(element) - to delete a single element or elements between a particular range.
+s.size() - returns the size of the unordered set.
+s.empty() - check if empty or not.
+
+
+VECTOR - dynamic array that can change size and can be traversed through iterators
+
+vector<data_type> variable_name;
+vector <int> v;
+
+auto it = v.begin() - first element of the vector
+auto it = v.end() - element after last element of iterator
+v.push_back(element) - accepts parameter and insert element at end;
+v.insert(it,element) - insert at given iterator
+v.pop_back - deletes the last element;
+v.size() - lenght of vector
+v.empty()
+v.clear()
+v.front() and v.back()
+
