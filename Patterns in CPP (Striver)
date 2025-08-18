@@ -114,10 +114,83 @@ void pattern11(int n){
     }
 }
 
+void pattern12(int n){
+    for(int i=0; i<n; i++){
+        for(int j=0; j<i+1; j++){
+            cout << j+1;
+        }
+        for(int j=0; j<2*(n-(i+1)); j++){
+            cout << " ";
+        }
+        for(int j=i+1; j>0; j--){
+            cout << j;
+        }
+        cout << "\n";
+    }
+}
+
+void pattern13(int n){
+    int val=1;
+    for(int i=0; i<n; i++){
+        for(int j=0; j<=i; j++){
+            cout << val << " ";
+            val++;
+        }
+        cout << "\n";
+    }
+}
+
+void pattern14(int n){
+for(char i = 'A'; i<'A'+n; i++){
+    for(char j='A'; j<=i; j++){
+        cout << j;
+    }
+    cout << endl;
+}
+}
+
+void pattern15(int n){
+    for(char i = 'A'; i< 'A'+n; i++){
+    for(char j='A'; j<('A'+(n-(i-'A'))); j++){
+        cout << j;
+    }
+    cout << endl;
+}
+}
+
+void pattern16(int n){
+    char aal = 'A';
+    for(char i = 'A'; i< 'A'+n; i++){
+    for(char j='A'; j<=i; j++){
+        cout << aal;
+    }
+    cout << endl;
+    aal++;
+}
+}
+
+void pattern17(int n){
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n-i-1; j++){
+            cout << " ";
+        }
+        char ch = 'A';
+          int breakpoint = (2*i+1)/2;
+          for(int j=1;j<=2*i+1;j++){
+              
+              cout<<ch;
+              if(j <= breakpoint) ch++;
+              else ch--;
+          }
+          cout << endl;
+    }
+}
+
+
 int main(){
 int n;
 cin >> n;
-pattern11(n);
+pattern17(n);
 
 return 0;
 }
