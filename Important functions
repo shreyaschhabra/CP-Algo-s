@@ -19,4 +19,14 @@ to_string(num) returns string;
 6. NUMBER OF DIGITS IN NUM USING LOG
 int cnt = (int)(log10(n)+1);
 
+7. MINIMUM ELEMENT / MAX ELEMENT in vector
+min_element(v.begin(),v.end()); - returns iterator;
+max_element(v.begin(),v.end()); - returns iterator;
+
+8. SUM OF VECTOR 
+accumulate(v.begin(),v.end(),0);
+find and count also reverse (reverse also works in strings)
+
+
+
 
