@@ -27,6 +27,19 @@ max_element(v.begin(),v.end()); - returns iterator;
 accumulate(v.begin(),v.end(),0);
 find and count also reverse (reverse also works in strings)
 
+9. Substring slicing
+s.substr(pos, len);
+string s = "35420";
+
+cout << s.substr(0, 2);   // "35"   (start=0, len=2)
+cout << s.substr(2, 3);   // "420"  (start=2, len=3)
+cout << s.substr(1);      // "5420" (start=1, till end)
+
+10. String resizing
+
+s.resize(len); - it resizes to given length(by shortening or adding null characters);
+
+
 
 
 
